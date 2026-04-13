@@ -61,7 +61,7 @@ public class ChatApp {
        System.out.print("Enter password: ");
        Password = sc.nextLine();
  
-       if (Password.length() < 8 || !Password.matches(".*[A-Z].*") || !Password.matches(".*[0-9].*") || !savedPassword.matches(".*[^a-zA-Z0-9].*")) {
+       if (Password.length() < 8 || !Password.matches(".*[A-Z].*") || !Password.matches(".*[0-9].*") || !Password.matches(".*[^a-zA-Z0-9].*")) {
        System.out.println("Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a special character.");
        return;
       
