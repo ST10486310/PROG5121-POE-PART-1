@@ -10,13 +10,13 @@ import java.util.regex.Pattern;
  * @author lab_services_student
  */
 public class ChatApp {
-    
+   
     static Scanner sc = new Scanner(System.in);
-    static String savedUsername = "";
-    static String savedPassword = "";
-    static String savedCell = "";
-    static String savedFirstName = "";
-    static String savedLastName = "";
+    static String Username = "";
+    static String Password = "";
+    static String Cell = "";
+    static String FirstName = "";
+    static String LastName = "";
     
 
     public static void main(String[] args) {
@@ -42,16 +42,16 @@ public class ChatApp {
              
         //get first and last name
         System.out.print("Enter first name: ");
-        savedFirstName = sc.nextLine();
+        FirstName = sc.nextLine();
         
         System.out.print("Enter last name: ");
-        savedLastName = sc.nextLine();
+        LastName = sc.nextLine();
         
         //get username
         System.out.print("Enter username: ");
-        savedUsername = sc.nextLine();
+        Username = sc.nextLine();
         
-        if (!savedUsername.contains("_") || savedUsername.length() > 5) {
+        if (!Username.contains("_") || Username.length() > 5) {
         System.out.println("Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.");
         return;
          
@@ -59,9 +59,9 @@ public class ChatApp {
     
      //get password
        System.out.print("Enter password: ");
-       savedPassword = sc.nextLine();
+       Password = sc.nextLine();
  
-       if (savedPassword.length() < 8 || !savedPassword.matches(".*[A-Z].*") || !savedPassword.matches(".*[0-9].*") || !savedPassword.matches(".*[^a-zA-Z0-9].*")) {
+       if (Password.length() < 8 || !Password.matches(".*[A-Z].*") || !Password.matches(".*[0-9].*") || !savedPassword.matches(".*[^a-zA-Z0-9].*")) {
        System.out.println("Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a special character.");
        return;
       
@@ -71,9 +71,9 @@ public class ChatApp {
        
        //Get cell number
        System.out.print("Enter cell number (+27XXXXXXXXX): ");
-       savedCell = sc.nextLine();
+       Cell = sc.nextLine();
        
-       if (!Pattern.matches("^\\+27[0-9]{9}$", savedCell)) {
+       if (!Pattern.matches("^\\+27[0-9]{9}$", Cell)) {
             System.out.println("Cell phone number incorrectly formatted or does not contain international code.");
             return;
          
@@ -83,9 +83,19 @@ public class ChatApp {
       
          }
          
-         static void Login() {
+         static void login() {
              
+         System.out.println("Username:"); String u = sc.nextLine();
+         System.out.println("Pasword:");  String p = sc.nextLine();
+         
+         
+             
+         if (Username.equals(u) && Password.equals(p))
+         System.out.println("Welcome " + FirstName + " " + LastName + " it is great to see you.");
+          else
+         System.out.println("Username or password is incorrect, please try again.");
          }
+
 }
 
 
